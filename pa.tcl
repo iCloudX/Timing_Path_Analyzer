@@ -620,44 +620,6 @@ proc split_by_proc {afile} {
   #unset curs(0,all)
 }
 # }}}
-#: ln_hainan
-# {{{
-proc ln_hainan {module version path} {
-  set fout [open "~/.tmp" w]
-  puts $fout "ln -sf $path/log/$module/$version/run.log"
-  puts $fout "ln -sf $path/rpt/$module/$version/area.rpt"
-  puts $fout "ln -sf $path/rpt/$module/$version/check.rpt"
-  puts $fout "ln -sf $path/rpt/$module/$version/clock_gating.rpt"
-  #puts $fout "ln -sf $path/rpt/$module/$version/comp1_area.rpt"
-  #puts $fout "ln -sf $path/rpt/$module/$version/comp1_vios.rpt"
-  #puts $fout "ln -sf $path/rpt/$module/$version/comp2_area.rpt"
-  #puts $fout "ln -sf $path/rpt/$module/$version/comp2_vios.rpt"
-  puts $fout "ln -sf $path/rpt/$module/$version/constraint.rpt"
-  puts $fout "ln -sf $path/rpt/$module/$version/derate.rpt"
-  #puts $fout "ln -sf $path/rpt/$module/$version/ma0_top.dont_touch.tcl"
-  #puts $fout "ln -sf $path/rpt/$module/$version/ma0_top.vt.rpt"
-  puts $fout "ln -sf $path/rpt/$module/$version/multibit.rpt"
-  puts $fout "ln -sf $path/rpt/$module/$version/printvar.rpt"
-  puts $fout "ln -sf $path/rpt/$module/$version/qor.rpt"
-  puts $fout "ln -sf $path/rpt/$module/$version/ref.rpt"
-  puts $fout "ln -sf $path/rpt/$module/$version/timing.rpt"
-  puts $fout "ln -sf $path/rpt/$module/$version/timing_max.rpt"
-  puts $fout "ln -sf $path/rpt/$module/$version/violator_all.rpt"
-  puts $fout "ln -sf $path/rpt/$module/$version/vios.rpt"
-  
-  close $fout
-}
-# }}}
-#: ln_intel
-# {{{
-proc ln_intel {module stage path } {
-  set fout [open "~/.tmp" w]
-  puts $fout "ln -sf $path/syn/reports/$module.$stage.area.rpt         area.rpt"
-  puts $fout "ln -sf $path/syn/reports/$module.$stage.vars             printvar.rpt"
-  puts $fout "ln -sf $path/syn/reports/$module.$stage.clock_gating.rpt clock_gating.rpt"
-  close $fout
-}
-# }}}
 #: array_save
 # {{{
 proc array_save {aname ofile} {
